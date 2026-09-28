@@ -10,18 +10,18 @@ services:
       FLASK_ENV: production
       FLASK_DEBUG: "False"
       PREFERRED_URL_SCHEME: http
-      CORS_ORIGINS: http://localhost:8080,http://127.0.0.1:8080
+      CORS_ORIGINS: http://localhost:3002,http://127.0.0.1:3002
     extra_hosts:
       - "host.docker.internal:host-gateway"
     restart: unless-stopped
-    expose:
-      - "5000"
+    ports:
+      - "3001:5000"
 
   web:
     build:
       context: ./abware_front
     ports:
-      - "8080:80"
+      - "3002:80"
     depends_on:
       - api
     restart: unless-stopped

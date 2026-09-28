@@ -67,7 +67,10 @@ copy abware_api\env.example abware_api\.env
 docker compose up --build
 ```
 
-Uygulama: [http://localhost:8080](http://localhost:8080)
+Uygulama: [http://localhost:3002](http://localhost:3002)  
+API: [http://localhost:3001](http://localhost:3001)
+
+Sunucuda yalnızca bu iki port açılır: **3001** (API), **3002** (frontend).
 
 Nginx `/api` isteklerini backend konteynerine iletir. SQL Server, konteynerden erişilebilir olmalıdır.
 
@@ -84,8 +87,8 @@ copy env.example .env
 python app.py
 ```
 
-API: [http://127.0.0.1:5000](http://127.0.0.1:5000)  
-Swagger: [http://127.0.0.1:5000/api](http://127.0.0.1:5000/api)
+API: [http://127.0.0.1:3001](http://127.0.0.1:3001)  
+Swagger: [http://127.0.0.1:3001/api](http://127.0.0.1:3001/api)
 
 ### Frontend
 
@@ -95,9 +98,9 @@ npm install
 npm run dev
 ```
 
-Arayüz: [http://localhost:5173](http://localhost:5173)
+Arayüz: [http://localhost:3002](http://localhost:3002)
 
-Geliştirme sunucusu `/api` isteklerini `http://127.0.0.1:5000` adresine yönlendirir.
+Geliştirme sunucusu `/api` isteklerini `http://127.0.0.1:3001` adresine yönlendirir.
 
 ## Ortam değişkenleri
 
