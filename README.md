@@ -1,6 +1,6 @@
 # ABWare
 
-ABWare, depo operasyonunu tek yerden yönetmek için yazılmış bir stok ve raf takip sistemidir. Bu Git deposu hem web arayüzünü (`abware_front`) hem REST API’yi (`abware_api`) içerir.
+ABWare, depo operasyonunu tek yerden yönetmek için yazılmış bir stok ve raf takip sistemidir. Arayüz **mobil kullanım için** tasarlanmıştır ve **PWA** (Progressive Web App) olarak çalışır; telefona ana ekran kısayolu ile uygulama gibi açılır. Bu Git deposu hem web arayüzünü (`abware_front`) hem REST API’yi (`abware_api`) içerir.
 
 ## Neden yapıldı?
 
@@ -33,6 +33,8 @@ Kullanıcı firma kodu ile giriş yapar. Yetkisine göre:
 - stok girişi, çıkışı ve raf transferi yapar
 - rafları (mal kabul, normal, çıkış) yönetir
 - anlık stok, bugünkü hareket ve raporları görür
+
+Depo sahasında telefon ve el terminali kullanıldığı için arayüz küçük ekrana göre kurulmuştur. Barkod okuma, stok giriş/çıkış ve raf işlemleri mobilde yapılacak şekilde tasarlandı. PWA sayesinde tarayıcıdan ayrı bir uygulama kurulmadan ana ekrana eklenebilir (manifest + service worker).
 
 Teknik olarak frontend React (Vite), backend Flask + SQL Server’dır. Docker ile ikisi birlikte ayağa kalkar; tarayıcı `/api` üzerinden yerel API’ye gider.
 
