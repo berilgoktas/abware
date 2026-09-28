@@ -1,0 +1,31 @@
+# Secrets
+.env
+.env.local
+.env.staging
+env.staging
+
+# Dependencies and virtualenv
+venv/
+.venv/
+node_modules/
+
+# Build / deploy copies
+dist/
+dist-ssr/
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Logs and OS
+*.log
+logs/
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/

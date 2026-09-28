@@ -1,0 +1,15 @@
+services:
+  abware-backend-staging:
+    build: .
+    ports:
+      # Staging ortamı - 5051 portunda çalışacak (5049 ve 5000'de eski kod var)
+      - "${STAGING_PORT:-5051}:5000"
+    env_file:
+      - env.staging
+    restart: unless-stopped
+    container_name: abware-backend-staging
+    # Staging için Swagger açık olabilir
+    environment:
+      - FLASK_ENV=development
+      - SWAGGER_ENABLED=True
+      - FLASK_DEBUG=True

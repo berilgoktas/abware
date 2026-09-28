@@ -1,0 +1,14 @@
+services:
+  abware-backend:
+    build: .
+    ports:
+      # Senin senaryon: Cloudflare tunnel -> localhost:5049
+      - "${HOST_PORT:-5049}:5000"
+    env_file:
+      - .env
+    restart: unless-stopped
+
+
+
+
+

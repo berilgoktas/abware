@@ -1,0 +1,27 @@
+name: abware
+
+services:
+  api:
+    build:
+      context: ./abware_api
+    env_file:
+      - ./abware_api/.env
+    environment:
+      FLASK_ENV: production
+      FLASK_DEBUG: "False"
+      PREFERRED_URL_SCHEME: http
+      CORS_ORIGINS: http://localhost:8080,http://127.0.0.1:8080
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: unless-stopped
+    expose:
+      - "5000"
+
+  web:
+    build:
+      context: ./abware_front
+    ports:
+      - "8080:80"
+    depends_on:
+      - api
+    restart: unless-stopped
