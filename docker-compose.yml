@@ -1,3 +1,4 @@
+# Host portları: API 3001, frontend 3002
 name: abware
 
 services:
