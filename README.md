@@ -120,6 +120,5 @@ Bu bilgiler yalnızca test ortamı içindir. Canlı ortamda değiştirin.
 
 ## Daha fazla doküman
 
-- [Backend README](abware_api/README.md)
 - [API kapsamı](abware_api/API_KAPSAM.md)
 - [Docker deploy](abware_api/DEPLOY_DOCKER.md)
